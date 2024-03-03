@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+  int a, b, i, j;
+  printf("B.RISHITHA  192324130 \n");
+  
+
+  printf("Enter the number of rows and columns :\n");
+  scanf("%d%d", &a,&b);
+  int  m1[a][b], m2[a][b], sum[a][b];
+
+  printf("Enter elements of 1st matrix:\n");
+  for (i =0; i < a; i++){
+    for (j=0; j < b; j++){
+      scanf("%d", &m1[i][j]);
+    }
+  }
+
+  printf("Enter elements of 2nd matrix :\n");
+  for (i =0; i < a; i++){
+    for (j = 0; j< b; j++){
+      scanf("%d", &m2[i][j]);
+    }
+  }
+
+  printf("Product of the matrices:\n");
+  for (i =0; i< a; i++){
+    for (j = 0; j < b; j++){
+      sum[i][j] = m1[i][j] * m2[i][j];
+      printf("%d\t",sum[i][j]);
+    }
+    printf("\n");
+  }
+
+}
