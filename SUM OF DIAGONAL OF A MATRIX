@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+
+   int i, j;
+   int r, c;
+   int sum = 0;
+	printf("B.RISHITHA   192324130 \n");
+   printf("\nEnter the number of Rows : ");
+   scanf("%d", &r);
+ 
+   printf("\nEnter the number of Columns : ");
+   scanf("%d", &c);
+   int m[r][c];
+   printf("\nEnter the Elements of the matrix: \n");
+ 
+   for (i = 0; i < r; i++) 
+   {
+   	
+      for (j = 0; j < c; j++) 
+	  {
+         
+         scanf("%d", &m[i][j]);
+      }
+   }
+ 
+  for (i = 0; i < r; i++) 
+  {
+   for (j = 0; j < c; j++) 
+    {
+     if (i == j)
+     sum = sum + m[i][j];
+    }
+   }
+ 
+   printf("\nSum of diagonal elements in matrix is: %d", sum);
+}
