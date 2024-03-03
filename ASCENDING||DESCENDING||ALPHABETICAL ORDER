@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n, i, j, temp;
+    char str[20][50], temp_str[50];
+    printf("B.RISHITHA  192324130 \n");
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for (i = 0; i < n; i++)
+        scanf("%s", str[i]);
+
+  
+    for (i = 0; i < n - 1; i++)
+        for (j = i + 1; j < n; j++)
+            if (strcmp(str[i], str[j]) > 0) {
+                strcpy(temp_str, str[i]);
+                strcpy(str[i], str[j]);
+                strcpy(str[j], temp_str);
+            }
+
+    printf("Elements in ascending order:\n");
+    for (i = 0; i < n; i++)
+        printf("%s\t", str[i]);
+    printf("\n");
+
+  
+    for (i = 0; i < n - 1; i++)
+        for (j = i + 1; j < n; j++)
+            if (strcmp(str[i], str[j]) < 0) {
+                strcpy(temp_str, str[i]);
+                strcpy(str[i], str[j]);
+                strcpy(str[j], temp_str);
+            }
+
+    printf("Elements in descending order:\n");
+    for (i = 0; i < n; i++)
+        printf("%s\t", str[i]);
+    printf("\n");
+
+    return 0;
+}
