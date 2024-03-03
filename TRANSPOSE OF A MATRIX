@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main() 
+{
+  int i,j,r,c;
+  	printf("B.RISHITHA  192324130\n");
+  printf("Enter rows and columns: ");
+  scanf("%d %d", &r,&c);
+  int m[r][c];
+  printf("Enter elements:");
+  for (i=0;i<r;i++)
+{
+	for(j=0;j<c;j++)
+	{
+		scanf("%d",&m[i][j]);
+		
+	}
+}
+printf("Enter matrix:\n");
+	for(i=0;i<r;i++)
+	{
+		for(j=0;j<c;j++)
+		{
+			printf("%d",m[i][j]);
+			printf("\t");
+		}
+			printf("\n");
+	}
+
+    printf("Transpose matrix:\n");
+    for(i=0;i<c;i++)
+    {
+    	for(j=0;j<r;j++)
+    	{
+    		printf("%d",m[j][i]);
+    	   printf("\t");
+		}
+			printf("\n");
+	}
+	return 0;
+}
