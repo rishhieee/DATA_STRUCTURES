@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int lar;
+    printf("B.RISHITHA  192324130\n");
+    int mat[10][10];
+    printf("Enter any 3*3 matrix: ");
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+            scanf("%d", &mat[i][j]);
+    }
+    lar = mat[0][0];
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            if(lar<mat[i][j])
+                lar = mat[i][j];
+        }
+    }
+    printf("\nLargest Element = %d", lar);
+    getch();
+    return 0;
+}
