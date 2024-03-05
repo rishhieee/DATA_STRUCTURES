@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<stdlib.h>
+int n, top = -1, *stack,size=10;
+int isfull()
+{
+	if(top==size-1)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int isempty()
+{
+	if(top==-1)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int push(int data)
+{
+	if(!isfull())
+	{
+		top=top+1;
+		stack[top]=data;
+	}
+	return data;
+}
+int pop()
+{
+	int data;
+	if(!isempty())
+	{
+	 data=stack[top];
+	 top=top-1;
+	 return data;
+    }
+}
+int peak()
+{
+	return stack[top];
+}
+void display()
+{
+	for(int i=top;i>-1;i--) 
+	printf("%d ",stack[i]);
+	printf("\n\n");
+}
+int main()
+{
+	n = 10;
+
+	stack = (int*)malloc(n*sizeof(int));
+	printf("B.RISHITHA  192324130 \n");
+	push(57);
+	push(78);
+	push(23);push(89);
+	printf("Displaying elements of the stack -\n");
+	display();
+	printf("Displaying the top of the stack :  \n");
+	printf("%d \n",peak());;
+	pop();
+	pop();
+	
+	printf("After deleting : \n");
+	display();
+	return 0;
+}
