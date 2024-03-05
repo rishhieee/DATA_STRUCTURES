@@ -61,7 +61,7 @@ void display()
 
 int main()
 {
-
+printf("B.RISHITHA  192324130 \n);
 push(90);
 push(45);
 push(54);
