@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX_SIZE 10
+struct node
+{ int data;
+struct node* next;
+}*n,*top;
+
+
+int size = MAX_SIZE;
+
+
+void push(int num)
+{
+    if (size == 0)
+    {
+        printf("Stack is full. Cannot push %d onto the stack.\n", num);
+        return;
+    }
+
+    struct node *n = (struct node*)malloc(sizeof(struct node));
+    n->data = num;
+    n->next = top;
+    top = n;
+    size--;
+}
+
+void pop()
+{
+    if (top == NULL)
+    {
+        printf("CANNOT DELETE \n");
+        return;
+    }
+
+    struct node *t = top;
+    top = top->next;
+    t->next = NULL;
+    free(t);
+}
+
+int peak()
+{ return top->data;
+}
+void display()
+{
+    struct node *t;
+    if (top == NULL)
+    {
+        printf("No elements to display \n");
+        exit(1);
+    }
+    else
+    {
+        for (t = top; t != NULL; t = t->next)
+        {
+            printf("%d ", t->data);
+        }
+    }
+}
+
+int main()
+{
+
+push(90);
+push(45);
+push(54);
+push(12);
+printf("Created stack is: \n");
+display();
+pop();
+
+printf("\n After deleting: \n");
+display();
+printf("\n Peak element is %d \n", peak());
+
+}
