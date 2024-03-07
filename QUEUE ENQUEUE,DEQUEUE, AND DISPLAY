@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<stdlib.h>
+int  rear=-1,front=-1, *queue,size=10;
+void enqueue(int num)
+{ if(rear==size-1)
+{printf("Overflow");}
+else if
+(front==-1 && rear==-1)
+{front=rear=0;
+queue[rear]=num;
+}
+else
+{rear=rear+1;
+queue[rear]=num;
+}}
+void dequeue()
+{ if(front==-1 &rear==1)
+{ printf("Underflow");
+}
+else if(front==rear)
+{ front=rear=-1;}
+else
+{printf("Deleted element : %d ", queue[front]);
+ front=front+1;
+ printf("\n");
+}
+}
+void display()
+{ if(rear==-1&&front==-1)
+{printf("underflow");
+}else
+{ for(int i=front;i<=rear;i++)
+{ printf("%d ",queue[i]);
+}
+ printf("\n");
+}}
+int main()
+{printf("B.RISHTIHA  192324130 \n");
+int n=10;
+queue=(int*)malloc(n*sizeof(int));
+enqueue(90);
+enqueue(23);
+enqueue(55);
+enqueue(67);
+display();
+  dequeue();
+dequeue();
+  printf("After deleting: \n");
+  display();
+
+}
