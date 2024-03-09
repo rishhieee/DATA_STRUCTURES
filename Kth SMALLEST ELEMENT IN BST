@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    int data;
+    struct node* left;
+    struct node* right;
+};
+
+
+struct node* createNode(int data) {
+    struct node* newNode = (struct node*)malloc(sizeof(struct node));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+
+void inorderKthSmallest(struct node* root, int k, int* count, int* result) {
+    if (root == NULL || *count >= k) return;
+
+    inorderKthSmallest(root->left, k, count, result);
+
+    (*count)++;
+    if (*count == k) {
+        *result = root->data;
+        return;
+    }
+
+    inorderKthSmallest(root->right, k, count, result);
+}
+
+int findKthSmallest(struct node* root, int k) {
+    int count = 0;
+    int result = -1;
+
+    inorderKthSmallest(root, k, &count, &result);
+
+    return result;
+}
+
+int main() {printf("B.RISHITHA  192324130\n");
+    struct node* root = createNode(20);
+    root->left = createNode(8);
+    root->right = createNode(22);
+    root->left->left = createNode(4);
+    root->left->right = createNode(12);
+root->left->right->left=createNode(10);
+root->left->right->right=createNode(14);
+    int k1 = 3;
+    int k2 = 5;
+
+    printf("For k = %d, the Kth smallest element is: %d\n", k1,findKthSmallest(root, k1));
+    printf("For k = %d, the Kth smallest element is: %d\n", k2,findKthSmallest(root, k2));
+
+    return 0;
+}
